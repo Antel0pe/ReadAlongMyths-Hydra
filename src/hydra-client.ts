@@ -7,7 +7,7 @@ export const initHydraRegistration = async () => {
   await Promise.all([
     hydra.registerComponent(
       "Map",
-      `A map that displays a map with a marker at a specified location, with a specified zoom level.`,
+      `A map that displays a map centered at a specified location, with a specified zoom level.`,
       Map,
       {
         centerLatLon: JSON.stringify({
