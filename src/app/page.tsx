@@ -1,16 +1,20 @@
 "use client";
 import Map from "@/components/map";
-import hydra from "@/hydra-client";
+import hydra, { initHydraRegistration } from "@/hydra-client";
 import { HydraChat } from "hydra-ai";
-import { ReactElement, useState } from "react";
+import { ReactElement, useEffect, useState } from "react";
 
 export default function Home() {
-  const [hydraComponent, setCanvasComponent] = useState<ReactElement | null>(
-    null
+  useEffect(() => {
+    initHydraRegistration();
+  }, []);
+
+  const [hydraComponent, setHydraComponent] = useState<ReactElement | null>(
+    <Map />
   );
 
-  const handleComponent = (component: ReactElement) => {
-    setCanvasComponent(component);
+  const handleHydraComponentUpdate = (component: ReactElement) => {
+    setHydraComponent(component);
   };
 
   return (
@@ -25,10 +29,10 @@ export default function Home() {
           loadingIconColor="gray"
           aiIconColor="#70bfae"
           aiName="Hydra"
-          handleComponent={handleComponent}
+          handleComponent={handleHydraComponentUpdate}
         />
       </div>
-      <Map />
+      {hydraComponent}
     </main>
   );
 }

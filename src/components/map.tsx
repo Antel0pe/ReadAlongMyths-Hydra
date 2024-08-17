@@ -1,27 +1,26 @@
 import "leaflet/dist/leaflet.css";
-import { MapContainer, Marker, Popup, TileLayer } from "react-leaflet";
+import { MapContainer, TileLayer } from "react-leaflet";
+import MapController from "./map-controller";
 
 interface MapProps {
-  center?: [number, number];
+  centerLatLon?: [number, number];
   zoom?: number;
 }
 
-export default function Map({ center = [0, 0], zoom = 3 }: MapProps) {
+export default function Map({ centerLatLon = [0, 0], zoom = 3 }: MapProps) {
   return (
     <div
       className="absolute h-full w-full top-0 left-0 -z-1"
       style={{ zIndex: -1 }}
     >
       <MapContainer
-        center={center}
+        center={centerLatLon}
         zoom={zoom}
         scrollWheelZoom={true}
         className="flex-grow h-full w-full"
       >
         <TileLayer url={"https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"} />
-        <Marker position={[0, 0]}>
-          <Popup>Test Marker</Popup>
-        </Marker>
+        <MapController centerLatLon={centerLatLon} zoom={zoom} />
       </MapContainer>
     </div>
   );
