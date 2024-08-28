@@ -1,8 +1,8 @@
 "use client";
+import MapView from "@/components/map-view";
 import hydra, { initHydraRegistration } from "@/hydra-client";
 import { HydraChat } from "hydra-ai";
 import { ReactElement, useEffect, useState } from "react";
-import MapView from "@/components/map-view";
 
 export default function Home() {
   useEffect(() => {

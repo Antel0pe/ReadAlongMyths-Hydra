@@ -9,10 +9,7 @@ interface MapProps {
 
 export default function Map({ centerLatLon = [0, 0], zoom = 3 }: MapProps) {
   return (
-    <div
-      className="absolute h-full w-full top-0 left-0 -z-1"
-      style={{ zIndex: -1 }}
-    >
+    <div className="absolute h-full w-full top-0 left-0 -z-1">
       <MapContainer
         center={centerLatLon}
         zoom={zoom}
