@@ -18,8 +18,13 @@ export default function Home() {
   };
 
   return (
+<<<<<<< HEAD
     <main className="flex h-full flex-row p-24">
       <div className="z-10 w-[350px] bg-white rounded-md shadow-md text-black h-full">
+=======
+    <main className="flex min-h-screen flex-row p-24">
+      <div className="z-10 w-[350px] bg-white rounded-md shadow-md text-black">
+>>>>>>> main
         <HydraChat
           hydraClient={hydra}
           initialMessages={[]}
