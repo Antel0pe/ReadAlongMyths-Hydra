@@ -1,5 +1,5 @@
 import { HydraClient } from "hydra-ai";
-import Map from "./components/map";
+import MapView from "./components/map-view";
 
 const hydra = new HydraClient();
 
@@ -8,7 +8,7 @@ export const initHydraRegistration = async () => {
     hydra.registerComponent(
       "Map",
       `A map that displays a map centered at a specified location, with a specified zoom level.`,
-      Map,
+      MapView,
       {
         centerLatLon: JSON.stringify({
           type: "number[]",

@@ -1,5 +1,5 @@
 "use client";
-import Map from "@/components/map";
+import MapView from "@/components/map-view";
 import hydra, { initHydraRegistration } from "@/hydra-client";
 import { HydraChat } from "hydra-ai";
 import { ReactElement, useEffect, useState } from "react";
@@ -10,7 +10,7 @@ export default function Home() {
   }, []);
 
   const [hydraComponent, setHydraComponent] = useState<ReactElement | null>(
-    <Map />
+    <MapView />
   );
 
   const handleHydraComponentUpdate = (component: ReactElement) => {
@@ -18,8 +18,13 @@ export default function Home() {
   };
 
   return (
+<<<<<<< HEAD
+    <main className="flex h-full flex-row p-24">
+      <div className="z-10 w-[350px] bg-white rounded-md shadow-md text-black h-full">
+=======
     <main className="flex min-h-screen flex-row p-24">
       <div className="z-10 w-[350px] bg-white rounded-md shadow-md text-black">
+>>>>>>> main
         <HydraChat
           hydraClient={hydra}
           initialMessages={[]}
