@@ -22,6 +22,12 @@ export const initHydraRegistration = async () => {
           default: 3,
           required: false,
         }),
+        markers: JSON.stringify({
+          type: "object[]",
+          description: "An object with lat and lon properties. Each object represents a marker on the map.",
+          default: [],
+          required: false,
+        }),
       }
     ),
   ]);

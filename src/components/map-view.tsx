@@ -6,9 +6,13 @@ import { useMemo } from "react";
 type Props = {
   centerLatLon?: [number, number];
   zoom?: number;
+  markers?: {
+    lat: number;
+    lon: number;
+  }[];
 };
 
-export default function MapView({ centerLatLon, zoom }: Props) {
+export default function MapView({ centerLatLon, zoom, markers }: Props) {
   const Map = useMemo(
     () =>
       dynamic(() => import("@/components/map"), {
@@ -20,7 +24,7 @@ export default function MapView({ centerLatLon, zoom }: Props) {
 
   return (
     <div className="w-full h-full " style={{ zIndex: 1 }}>
-      <Map centerLatLon={centerLatLon} zoom={zoom} />
+      <Map centerLatLon={centerLatLon} zoom={zoom} markers={markers} />
     </div>
   );
 }
