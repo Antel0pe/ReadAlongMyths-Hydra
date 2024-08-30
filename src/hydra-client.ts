@@ -1,7 +1,7 @@
 import { HydraClient } from "hydra-ai";
 import MapView from "./components/map-view";
 
-const hydra = new HydraClient(process.env.OPENAI_MODEL ?? "gpt-4o");
+const hydra = new HydraClient(process.env.NEXT_PUBLIC_OPENAI_MODEL ?? "gpt-4o");
 
 export const initHydraRegistration = async () => {
   await Promise.all([
