@@ -14,13 +14,19 @@ export const initHydraRegistration = async () => {
           type: "number[]",
           description: "The latitude and longitude of the center of the map.",
           default: [0, 0],
-          required: false,
+          required: true,
         }),
         zoom: JSON.stringify({
           type: "number",
           description: "The zoom level of the map.",
           default: 3,
-          required: false,
+          required: true,
+        }),
+        markers: JSON.stringify({
+          type: "object[]",
+          description: "An array of objects with lat and lon properties. Each object represents a marker on the map.",
+          default: [],
+          required: true,
         }),
       }
     ),
