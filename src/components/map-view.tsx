@@ -7,6 +7,7 @@ type Props = {
   centerLatLon?: [number, number];
   zoom?: number;
   markers?: {
+    name: string;
     lat: number;
     lon: number;
   }[];
